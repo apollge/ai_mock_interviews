@@ -118,6 +118,8 @@ export async function getInterviewsByUserId(
     .orderBy("createdAt", "desc")
     .get();
 
+  console.log(interviews.docs);
+
   return interviews.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
